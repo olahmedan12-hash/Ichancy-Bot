@@ -1,0 +1,14 @@
+name: Keep Server Alive
+
+on:
+  schedule:
+    - cron: '*/14 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping-server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Ping request
+        run: |
+          curl -I https://اسم-موقعك-على-الاستضافة.onrender.com
